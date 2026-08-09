@@ -1,0 +1,22 @@
+{
+  "clients": [],
+  "personnel": [],
+  "soins": [],
+  "abonnements": [],
+  "paiements": [],
+  "transactions": [],
+  "stocks": [],
+  "mouvements_stock": [],
+  "rendezvous": [],
+  "utilisateurs": [
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:25:01Z",
+      "updated_at": "2026-08-09T09:25:03.815607Z",
+      "note": "updated-2026-08-09T09:25:03Z",
+      "deleted_at": "2026-08-09T09:25:03.815585Z"
+    }
+  ],
+  "fiches_suivi": [],
+  "fiches_seances": []
+}

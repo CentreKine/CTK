@@ -1,0 +1,426 @@
+{
+  "clients": [
+    {
+      "id": "19wruf3it",
+      "nom": "Roi",
+      "prenom": "Ferry",
+      "date_naissance": "2020-01-22",
+      "sexe": "M",
+      "telephone": "456788",
+      "email": "sergearebaye@gmail.com",
+      "adresse": "Walia",
+      "profession": "Mecanicien",
+      "groupe_sanguin": "B+",
+      "allergies": null,
+      "antecedents": null,
+      "date_inscription": "2026-08-09",
+      "notes": null,
+      "created_by": "admin-001",
+      "updated_by": null,
+      "created_at": "2026-08-09T11:15:38.040271Z",
+      "updated_at": "2026-08-09T11:16:56.232767Z"
+    },
+    {
+      "updated_at": "2026-08-09T11:16:38.422413Z",
+      "nom": "Somte",
+      "id": "78cfa02427cd420985d8a99a143c264a",
+      "date_inscription": "2026-08-09",
+      "prenom": "Cecile",
+      "created_at": "2026-08-09T09:54:05.519294Z",
+      "date_naissance": "2000-02-20",
+      "telephone": "66525774",
+      "email": "guiryenouba@gmail.com",
+      "adresse": "Moursal/N'Djamena/Tchad",
+      "profession": "Informaticien",
+      "groupe_sanguin": "A+",
+      "allergies": "Rien",
+      "antecedents": "Rien",
+      "notes": "Client VIP",
+      "created_by": null,
+      "updated_by": null,
+      "sexe": "F"
+    },
+    {
+      "id": "test-clients",
+      "created_at": "2026-08-09T09:27:10Z",
+      "updated_at": "2026-08-09T09:27:10.439679Z",
+      "note": "updated-2026-08-09T09:27:10Z",
+      "deleted_at": "2026-08-09T09:27:10.439647Z"
+    },
+    {
+      "id": "test-clients",
+      "created_at": "2026-08-09T09:26:32Z",
+      "updated_at": "2026-08-09T09:26:32.791130Z",
+      "note": "updated-2026-08-09T09:26:32Z",
+      "deleted_at": "2026-08-09T09:26:32.791101Z"
+    },
+    {
+      "id": "test-clients",
+      "created_at": "2026-08-09T09:25:03Z",
+      "updated_at": "2026-08-09T09:25:04.292236Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:04.292212Z"
+    }
+  ],
+  "personnel": [
+    {
+      "id": "5ifzi8xaa",
+      "nom": "Kemndig",
+      "prenom": "Ronelyam",
+      "poste": "Kinésithérapeute Chef",
+      "specialite": "Neurologie",
+      "telephone": "56789999",
+      "email": "sergearebaye@gmail.com",
+      "adresse": "Moursal",
+      "date_embauche": "1980-04-04",
+      "salaire": 400000,
+      "statut": "actif",
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2026-08-09T10:52:20.160459Z",
+      "updated_at": "2026-08-09T11:14:52.425199Z"
+    },
+    {
+      "id": "knet9h77h",
+      "nom": "Guiryenouba",
+      "prenom": "Zacharie",
+      "poste": "Secrétaire médical",
+      "specialite": "Administration",
+      "telephone": "66525774",
+      "email": "guiryenouba@gmail.com",
+      "adresse": "Moursal",
+      "date_embauche": "2000-07-20",
+      "salaire": 300000,
+      "statut": "actif",
+      "created_by": null,
+      "updated_by": null,
+      "created_at": "2026-08-09T10:49:38.316606Z",
+      "updated_at": "2026-08-09T11:14:52.946490Z"
+    },
+    {
+      "id": "test-personnel",
+      "created_at": "2026-08-09T09:27:10Z",
+      "updated_at": "2026-08-09T09:27:10.720253Z",
+      "note": "updated-2026-08-09T09:27:10Z",
+      "deleted_at": "2026-08-09T09:27:10.720221Z"
+    },
+    {
+      "id": "test-personnel",
+      "created_at": "2026-08-09T09:26:32Z",
+      "updated_at": "2026-08-09T09:26:33.303612Z",
+      "note": "updated-2026-08-09T09:26:33Z",
+      "deleted_at": "2026-08-09T09:26:33.303427Z"
+    },
+    {
+      "id": "test-personnel",
+      "created_at": "2026-08-09T09:25:04Z",
+      "updated_at": "2026-08-09T09:25:04.757583Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:04.757530Z"
+    }
+  ],
+  "soins": [
+    {
+      "id": "jay40uk3z",
+      "client_id": "78cfa02427cd420985d8a99a143c264a",
+      "acte_code": "R000",
+      "acte_name": "Consultation",
+      "tarif": 3000,
+      "personnel_id": "5ifzi8xaa",
+      "date": "2026-08-09",
+      "heure": "09:00",
+      "notes": null,
+      "statut": "termine",
+      "paye": true,
+      "created_by": null,
+      "assigned_to": null,
+      "updated_by": null,
+      "created_at": "2026-08-09T10:52:41.654280Z",
+      "updated_at": "2026-08-09T11:15:55.928227Z"
+    },
+    {
+      "id": "test-soins",
+      "created_at": "2026-08-09T09:27:10Z",
+      "updated_at": "2026-08-09T09:27:11.344321Z",
+      "note": "updated-2026-08-09T09:27:11Z",
+      "deleted_at": "2026-08-09T09:27:11.344291Z"
+    },
+    {
+      "id": "test-soins",
+      "created_at": "2026-08-09T09:26:33Z",
+      "updated_at": "2026-08-09T09:26:33.475799Z",
+      "note": "updated-2026-08-09T09:26:33Z",
+      "deleted_at": "2026-08-09T09:26:33.475769Z"
+    },
+    {
+      "id": "test-soins",
+      "created_at": "2026-08-09T09:25:04Z",
+      "updated_at": "2026-08-09T09:25:05.099135Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:05.099094Z"
+    }
+  ],
+  "abonnements": [
+    {
+      "id": "test-abonnements",
+      "created_at": "2026-08-09T09:27:12Z",
+      "updated_at": "2026-08-09T09:27:12.642282Z",
+      "note": "updated-2026-08-09T09:27:12Z",
+      "deleted_at": "2026-08-09T09:27:12.642246Z"
+    },
+    {
+      "id": "test-abonnements",
+      "created_at": "2026-08-09T09:26:34Z",
+      "updated_at": "2026-08-09T09:26:34.618165Z",
+      "note": "updated-2026-08-09T09:26:34Z",
+      "deleted_at": "2026-08-09T09:26:34.618115Z"
+    },
+    {
+      "id": "test-abonnements",
+      "created_at": "2026-08-09T09:25:06Z",
+      "updated_at": "2026-08-09T09:25:06.775160Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.775134Z"
+    }
+  ],
+  "paiements": [
+    {
+      "id": "yhdrijhah",
+      "reference": "CTK-20260809-53K8W",
+      "type": "soin",
+      "client_id": "78cfa02427cd420985d8a99a143c264a",
+      "client_nom": "Zacharie Guiryenouba",
+      "description": "Soin: Consultation (1 séance) - 100%",
+      "montant": 3000,
+      "date": "2026-08-09",
+      "mode_paiement": "especes",
+      "recu": true,
+      "created_by": null,
+      "created_at": "2026-08-09T11:00:00.877753Z",
+      "updated_at": "2026-08-09T11:15:56.293233Z"
+    },
+    {
+      "id": "test-paiements",
+      "created_at": "2026-08-09T09:27:12Z",
+      "updated_at": "2026-08-09T09:27:13.003004Z",
+      "note": "updated-2026-08-09T09:27:12Z",
+      "deleted_at": "2026-08-09T09:27:13.002973Z"
+    },
+    {
+      "id": "test-paiements",
+      "created_at": "2026-08-09T09:26:34Z",
+      "updated_at": "2026-08-09T09:26:34.840610Z",
+      "note": "updated-2026-08-09T09:26:34Z",
+      "deleted_at": "2026-08-09T09:26:34.840580Z"
+    },
+    {
+      "id": "test-paiements",
+      "created_at": "2026-08-09T09:25:06Z",
+      "updated_at": "2026-08-09T09:25:06.985986Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.985961Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "test-transactions",
+      "created_at": "2026-08-09T09:27:13Z",
+      "updated_at": "2026-08-09T09:27:13.581634Z",
+      "note": "updated-2026-08-09T09:27:13Z",
+      "deleted_at": "2026-08-09T09:27:13.581605Z"
+    },
+    {
+      "id": "test-transactions",
+      "created_at": "2026-08-09T09:26:34Z",
+      "updated_at": "2026-08-09T09:26:35.090656Z",
+      "note": "updated-2026-08-09T09:26:34Z",
+      "deleted_at": "2026-08-09T09:26:35.090627Z"
+    },
+    {
+      "id": "test-transactions",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.307412Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.307348Z"
+    }
+  ],
+  "stocks": [
+    {
+      "id": "test-stocks",
+      "created_at": "2026-08-09T09:27:13Z",
+      "updated_at": "2026-08-09T09:27:14.067023Z",
+      "note": "updated-2026-08-09T09:27:13Z",
+      "deleted_at": "2026-08-09T09:27:14.066993Z"
+    },
+    {
+      "id": "test-stocks",
+      "created_at": "2026-08-09T09:26:35Z",
+      "updated_at": "2026-08-09T09:26:35.626358Z",
+      "note": "updated-2026-08-09T09:26:35Z",
+      "deleted_at": "2026-08-09T09:26:35.626326Z"
+    },
+    {
+      "id": "test-stocks",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.577952Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.577929Z"
+    }
+  ],
+  "mouvements_stock": [
+    {
+      "id": "test-mouvements_stock",
+      "created_at": "2026-08-09T09:27:14Z",
+      "updated_at": "2026-08-09T09:27:14.670961Z",
+      "note": "updated-2026-08-09T09:27:14Z",
+      "deleted_at": "2026-08-09T09:27:14.670928Z"
+    },
+    {
+      "id": "test-mouvements_stock",
+      "created_at": "2026-08-09T09:26:35Z",
+      "updated_at": "2026-08-09T09:26:35.914640Z",
+      "note": "updated-2026-08-09T09:26:35Z",
+      "deleted_at": "2026-08-09T09:26:35.914609Z"
+    },
+    {
+      "id": "test-mouvements_stock",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.721797Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.720648Z"
+    }
+  ],
+  "rendezvous": [
+    {
+      "id": "test-rendezvous",
+      "created_at": "2026-08-09T09:27:12Z",
+      "updated_at": "2026-08-09T09:27:12.463041Z",
+      "note": "updated-2026-08-09T09:27:12Z",
+      "deleted_at": "2026-08-09T09:27:12.463012Z"
+    },
+    {
+      "id": "test-rendezvous",
+      "created_at": "2026-08-09T09:26:34Z",
+      "updated_at": "2026-08-09T09:26:34.384825Z",
+      "note": "updated-2026-08-09T09:26:34Z",
+      "deleted_at": "2026-08-09T09:26:34.384791Z"
+    },
+    {
+      "id": "test-rendezvous",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T09:25:06.633309Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.633287Z"
+    }
+  ],
+  "utilisateurs": [
+    {
+      "id": "hnue7wadc",
+      "nom": "Guiryenouba",
+      "prenom": "Zacharie",
+      "email": "guiryenouba@gmail.com",
+      "password_hash": "local-auth",
+      "role": "admin",
+      "telephone": "66525774",
+      "date_creation": "2026-08-09",
+      "actif": true,
+      "created_at": "2026-08-09T10:58:53.486Z",
+      "updated_at": "2026-08-09T11:16:55.762077Z"
+    },
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:27:09Z",
+      "updated_at": "2026-08-09T09:27:10.159415Z",
+      "note": "updated-2026-08-09T09:27:10Z",
+      "deleted_at": "2026-08-09T09:27:10.159386Z"
+    },
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:26:29Z",
+      "updated_at": "2026-08-09T09:26:32.421392Z",
+      "note": "updated-2026-08-09T09:26:32Z",
+      "deleted_at": "2026-08-09T09:26:32.421363Z"
+    },
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:25:01Z",
+      "updated_at": "2026-08-09T09:25:03.815607Z",
+      "note": "updated-2026-08-09T09:25:03Z",
+      "deleted_at": "2026-08-09T09:25:03.815585Z"
+    }
+  ],
+  "fiches_suivi": [
+    {
+      "id": "4l92t4t2j",
+      "client_id": "78cfa02427cd420985d8a99a143c264a",
+      "date_creation": "2026-08-09",
+      "motif": "ocjb",
+      "sexe": null,
+      "age": 25,
+      "temperature": 26.1,
+      "tension": null,
+      "poids": null,
+      "douleur": null,
+      "type_douleur": "Autre",
+      "siege_douleur": "bjvdjubb",
+      "diagnostic": "uobub",
+      "examen_physique": null,
+      "bilan_vasculaire": null,
+      "bilan_neurologique": null,
+      "bilan_articulaire": null,
+      "bilan_musculaire": null,
+      "evaluation_fonctionnelle": null,
+      "facteurs_psychologiques": null,
+      "objectifs": null,
+      "plan_soins": null,
+      "note_complementaire": null,
+      "created_by": "admin-001",
+      "updated_by": "admin-001",
+      "created_at": "2026-08-09T10:45:03.520863Z",
+      "updated_at": "2026-08-09T11:14:54.082254Z"
+    },
+    {
+      "id": "test-fiches_suivi",
+      "created_at": "2026-08-09T09:27:11Z",
+      "updated_at": "2026-08-09T09:27:11.946124Z",
+      "note": "updated-2026-08-09T09:27:11Z",
+      "deleted_at": "2026-08-09T09:27:11.946094Z"
+    },
+    {
+      "id": "test-fiches_suivi",
+      "created_at": "2026-08-09T09:26:33Z",
+      "updated_at": "2026-08-09T09:26:33.778056Z",
+      "note": "updated-2026-08-09T09:26:33Z",
+      "deleted_at": "2026-08-09T09:26:33.778027Z"
+    },
+    {
+      "id": "test-fiches_suivi",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T09:25:05.374690Z",
+      "note": "updated-2026-08-09T09:25:05Z",
+      "deleted_at": "2026-08-09T09:25:05.374667Z"
+    }
+  ],
+  "fiches_seances": [
+    {
+      "id": "test-fiches_seances",
+      "created_at": "2026-08-09T09:27:11Z",
+      "updated_at": "2026-08-09T09:27:12.205953Z",
+      "note": "updated-2026-08-09T09:27:12Z",
+      "deleted_at": "2026-08-09T09:27:12.205923Z"
+    },
+    {
+      "id": "test-fiches_seances",
+      "created_at": "2026-08-09T09:26:33Z",
+      "updated_at": "2026-08-09T09:26:34.077573Z",
+      "note": "updated-2026-08-09T09:26:33Z",
+      "deleted_at": "2026-08-09T09:26:34.077543Z"
+    },
+    {
+      "id": "test-fiches_seances",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T11:15:56.095831Z",
+      "note": "updated-2026-08-09T09:25:05Z"
+    }
+  ]
+}

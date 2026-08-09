@@ -1,0 +1,122 @@
+{
+  "clients": [
+    {
+      "id": "test-clients",
+      "created_at": "2026-08-09T09:26:32Z",
+      "updated_at": "2026-08-09T09:26:32.730370Z",
+      "note": "updated-2026-08-09T09:26:32Z"
+    },
+    {
+      "id": "test-clients",
+      "created_at": "2026-08-09T09:25:03Z",
+      "updated_at": "2026-08-09T09:25:04.292236Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:04.292212Z"
+    }
+  ],
+  "personnel": [
+    {
+      "id": "test-personnel",
+      "created_at": "2026-08-09T09:25:04Z",
+      "updated_at": "2026-08-09T09:25:04.757583Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:04.757530Z"
+    }
+  ],
+  "soins": [
+    {
+      "id": "test-soins",
+      "created_at": "2026-08-09T09:25:04Z",
+      "updated_at": "2026-08-09T09:25:05.099135Z",
+      "note": "updated-2026-08-09T09:25:04Z",
+      "deleted_at": "2026-08-09T09:25:05.099094Z"
+    }
+  ],
+  "abonnements": [
+    {
+      "id": "test-abonnements",
+      "created_at": "2026-08-09T09:25:06Z",
+      "updated_at": "2026-08-09T09:25:06.775160Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.775134Z"
+    }
+  ],
+  "paiements": [
+    {
+      "id": "test-paiements",
+      "created_at": "2026-08-09T09:25:06Z",
+      "updated_at": "2026-08-09T09:25:06.985986Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.985961Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "test-transactions",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.307412Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.307348Z"
+    }
+  ],
+  "stocks": [
+    {
+      "id": "test-stocks",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.577952Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.577929Z"
+    }
+  ],
+  "mouvements_stock": [
+    {
+      "id": "test-mouvements_stock",
+      "created_at": "2026-08-09T09:25:07Z",
+      "updated_at": "2026-08-09T09:25:07.721797Z",
+      "note": "updated-2026-08-09T09:25:07Z",
+      "deleted_at": "2026-08-09T09:25:07.720648Z"
+    }
+  ],
+  "rendezvous": [
+    {
+      "id": "test-rendezvous",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T09:25:06.633309Z",
+      "note": "updated-2026-08-09T09:25:06Z",
+      "deleted_at": "2026-08-09T09:25:06.633287Z"
+    }
+  ],
+  "utilisateurs": [
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:26:29Z",
+      "updated_at": "2026-08-09T09:26:32.421392Z",
+      "note": "updated-2026-08-09T09:26:32Z",
+      "deleted_at": "2026-08-09T09:26:32.421363Z"
+    },
+    {
+      "id": "test-utilisateurs",
+      "created_at": "2026-08-09T09:25:01Z",
+      "updated_at": "2026-08-09T09:25:03.815607Z",
+      "note": "updated-2026-08-09T09:25:03Z",
+      "deleted_at": "2026-08-09T09:25:03.815585Z"
+    }
+  ],
+  "fiches_suivi": [
+    {
+      "id": "test-fiches_suivi",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T09:25:05.374690Z",
+      "note": "updated-2026-08-09T09:25:05Z",
+      "deleted_at": "2026-08-09T09:25:05.374667Z"
+    }
+  ],
+  "fiches_seances": [
+    {
+      "id": "test-fiches_seances",
+      "created_at": "2026-08-09T09:25:05Z",
+      "updated_at": "2026-08-09T09:25:05.492493Z",
+      "note": "updated-2026-08-09T09:25:05Z"
+    }
+  ]
+}
