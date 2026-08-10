@@ -1,6 +1,6 @@
-// Shim to adapt frontend Supabase calls to local API
+// Shim to adapt frontend Supabase calls to the local/production API
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api';
+const API_BASE = (import.meta.env.VITE_API_BASE || '/api').replace(/\/$/, '');
 
 export const supabaseUrl = API_BASE;
 export const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'local-api-key';
@@ -11,7 +11,7 @@ function makeResponse(data, error = null) {
 }
 
 async function apiGet(table, params = {}) {
-  const url = new URL(`${API_BASE}/${table}`);
+  const url = new URL(`${API_BASE}/${table}`, window.location.origin);
   Object.entries(params).forEach(([k, v]) => url.searchParams.append(k, String(v)));
   const res = await fetch(url.toString());
   if (!res.ok) throw new Error('api_error');
