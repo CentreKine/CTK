@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // tools/sync_test.js
-// Node script to push local data.json entries to the running server API to verify synchronization for all tables.
+// Node script to push local data.json entries to the running server API and verify synchronization for all tables.
 // Usage: API_BASE=http://localhost:3000 node tools/sync_test.js
 
 import fs from 'fs';
@@ -37,12 +37,15 @@ async function main() {
   }
 
   const summary = {};
+  let overallErrors = 0;
+  let overallMissing = 0;
 
   for (const table of Object.keys(data)) {
-    summary[table] = { pushed: 0, updated: 0, skipped: 0, errors: 0 };
+    summary[table] = { pushed: 0, updated: 0, skipped: 0, errors: 0, missingAfterSync: 0 };
     console.log(`\n== Table: ${table} ==`);
+
     const serverRes = await fetchJson(`${API_BASE}/api/${table}`);
-    const serverArr = serverRes.ok ? (Array.isArray(serverRes.json) ? serverRes.json : []) : [];
+    const serverArr = serverRes.ok && Array.isArray(serverRes.json) ? serverRes.json : [];
     const serverMap = new Map((serverArr || []).map(s => [s.id, s]));
 
     const localArr = Array.isArray(data[table]) ? data[table] : [];
@@ -70,10 +73,32 @@ async function main() {
         console.log('error syncing', table, rec.id, e.message);
       }
     }
+
+    // After pushing/updating, verify all local ids exist on server
+    const verifyRes = await fetchJson(`${API_BASE}/api/${table}`);
+    const verifyArr = verifyRes.ok && Array.isArray(verifyRes.json) ? verifyRes.json : [];
+    const verifyMap = new Map((verifyArr || []).map(s => [s.id, s]));
+    for (const rec of localArr) {
+      if (!rec || !rec.id) continue;
+      if (!verifyMap.has(rec.id)) {
+        summary[table].missingAfterSync++;
+        overallMissing++;
+        console.log(`MISSING after sync: ${table} ${rec.id}`);
+      }
+    }
+
+    overallErrors += summary[table].errors;
   }
 
   console.log('\nSummary:');
   console.log(JSON.stringify(summary, null, 2));
+  if (overallErrors > 0 || overallMissing > 0) {
+    console.error(`\nSync verification failed: errors=${overallErrors}, missing=${overallMissing}`);
+    process.exit(1);
+  }
+
+  console.log('\nSync verification passed: all records present on server for all tables.');
+  process.exit(0);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
