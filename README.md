@@ -1,86 +1,83 @@
-# Clinic Finance - Local Install
+# Clinic Finance - Production Ready App
 
-This project is a React + TypeScript + Vite frontend with a lightweight local JSON API backend.
+This project is a React + TypeScript + Vite application prepared for deployment with a single production server entry point.
 
-## Local deployment overview
+## What is ready for deployment
 
-- Frontend: React app built with Vite
-- Local backend: `single_db_api.py` using `data.json` as the storage file
-- Environment variables: stored in `.env.local`
+- Frontend built with Vite and optimized for production
+- Backend API served by a Node.js production server via `server.js`
+- Data stored in `data.json` with automatic backups
+- SPA routing handled correctly for hosting platforms
+- Environment variables supported through `.env.local` or the deployment platform
 
 ## Prerequisites
 
 - Node.js 18+ and npm
-- Python 3.11+ (or Python 3 installation with `python` or `py` command)
 
-## Install on a new machine
+## Local development
 
-1. Clone the repository:
-
-```bash
-git clone <repo-url>
-cd clinic-finance-new
-```
-
-2. Install frontend dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Create or copy environment variables:
+2. Create environment variables:
 
 ```bash
 copy .env.example .env.local
 ```
 
-4. Install Python dependencies:
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-5. Start the local backend API:
-
-```bash
-python single_db_api.py
-```
-
-6. Start the frontend app:
+3. Start the development frontend:
 
 ```bash
 npm run dev
 ```
 
-7. Open the browser at:
+4. Open the browser at:
 
 ```text
 http://localhost:5173
 ```
 
-## Notes
+## Production start
 
-- The frontend is configured to use the local backend at `http://localhost:8000/api`.
-- The backend stores all data in `data.json` and creates backups automatically as `data.json.<timestamp>.bak`.
-- If you do not want to use the bundled local backend, you can still use your own API by updating `VITE_API_BASE` in `.env.local`.
+Build and start the production server:
+
+```bash
+npm run build
+npm start
+```
+
+The app will be available on:
+
+```text
+http://localhost:3000
+```
+
+## Deployment platforms
+
+This project is compatible with:
+
+- Vercel
+- Netlify
+- Render
+- Railway
+- Any VPS or container host
+
+For static hosting, upload the contents of the `dist` folder. For full-stack hosting, use the Node.js server entry point.
 
 ## Recommended commands
 
 ```bash
-npm run api      # start the local JSON API
-npm run dev      # start the frontend
-npm run build    # build the frontend for production
+npm run dev        # start the Vite dev server
+npm run build      # build the production bundle
+npm start          # start the production server
+npm run deploy:check  # validate the build
 ```
 
-## Automated setup
+## Notes
 
-You can also run the PowerShell helper script from the project root:
-
-```powershell
-./setup-local.ps1
-```
-
-## Legacy/optional files
-
-- `docker-compose.yml` is a legacy PostgreSQL setup and is not required for the current single-file local deployment.
-- `.env.local` is ignored by git, so each developer should create their own local copy.
+- The frontend uses `/api` by default, which is handled by the production server.
+- The backend persists data to `data.json` and creates backup files such as `data.json.<timestamp>.bak`.
+- If you use an external API backend, update `VITE_API_BASE` in your environment file.

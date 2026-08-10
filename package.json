@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite --port 5173",
     "api": "python single_db_api.py",
-    "start": "npm run dev",
+    "start": "node server.js",
+    "start:dev": "npm run dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:check": "npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
