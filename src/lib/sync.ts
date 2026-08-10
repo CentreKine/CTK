@@ -39,6 +39,7 @@ async function putServer(table: string, id: string, rec: any) {
 
 export async function syncNow(db?: any) {
   // Merge local IndexedDB with server data using updated_at as tiebreaker (last-write-wins)
+  // NOTE: handle missing updated_at values by treating a missing timestamp as older than a present one.
   const summary: Record<string, { pushed: number; pulled: number }> = {};
   for (const table of TABLES) {
     summary[table] = { pushed: 0, pulled: 0 };
@@ -48,37 +49,70 @@ export async function syncNow(db?: any) {
 
     // Push local changes to server
     for (const l of local) {
-      const s = serverMap.get(l.id);
-      if (!s) {
-        const created = await postServer(table, l);
-        if (created) summary[table].pushed++;
-        continue;
-      }
-      const lu = l.updated_at || l.updatedAt || '';
-      const su = s.updated_at || s.updatedAt || '';
-      if (lu && su) {
-        if (lu > su) {
+      try {
+        const s = serverMap.get(l.id);
+        // If server doesn't have the record, create it
+        if (!s) {
+          const created = await postServer(table, l);
+          if (created) summary[table].pushed++;
+          continue;
+        }
+
+        const lu = l.updated_at || l.updatedAt || '';
+        const su = s.updated_at || s.updatedAt || '';
+
+        // If both timestamps are missing, nothing to compare
+        if (!lu && !su) continue;
+
+        // If server has no timestamp but local does -> push local to server
+        if (!su && lu) {
           const updated = await putServer(table, l.id, l);
           if (updated) summary[table].pushed++;
-        } else if (su > lu) {
-          // server newer -> update local
+          continue;
+        }
+
+        // If local has no timestamp but server does -> pull server to local
+        if (!lu && su) {
           try {
             await clientStorage.put(table, s.id, s);
             summary[table].pulled++;
           } catch (e) {
-            // if put fails because missing, add
             await clientStorage.add(table, s);
             summary[table].pulled++;
           }
+          continue;
         }
+
+        // Both have timestamps: compare and apply last-write-wins
+        if (lu && su) {
+          if (lu > su) {
+            const updated = await putServer(table, l.id, l);
+            if (updated) summary[table].pushed++;
+          } else if (su > lu) {
+            try {
+              await clientStorage.put(table, s.id, s);
+              summary[table].pulled++;
+            } catch (e) {
+              await clientStorage.add(table, s);
+              summary[table].pulled++;
+            }
+          }
+        }
+      } catch (err) {
+        // individual record sync errors should not stop the loop
+        // console.warn('sync error', table, l?.id, err);
       }
     }
 
     // Pull server-only
     for (const s of (server || [])) {
       if (!localMap.has(s.id)) {
-        await clientStorage.add(table, s);
-        summary[table].pulled++;
+        try {
+          await clientStorage.add(table, s);
+          summary[table].pulled++;
+        } catch (e) {
+          // ignore add errors for existing keys
+        }
       }
     }
   }
