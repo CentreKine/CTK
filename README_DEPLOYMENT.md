@@ -11,13 +11,14 @@
 
 - Name: clinic-finance
 - Runtime: Node
-- Build Command: npm ci && npm run build
+- Build Command: npm install --include=dev && npm run build
 - Start Command: npm start
 
 ## 3. Variables d'environnement
 
 Ajoutez :
 - NODE_ENV=production
+- NPM_CONFIG_PRODUCTION=false
 - PORT=10000
 
 ## 4. Déployer
