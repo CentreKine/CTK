@@ -179,13 +179,20 @@ app.delete(['/api/:table/:id', '/api/:table/:id/'], (req, res) => {
 
 app.use(express.static(distPath, { index: false }));
 
-app.get(/(.+)/, (req, res) => {
+// Improved catch-all: don't return index.html for static asset requests or paths that look like files
+app.get('*', (req, res) => {
   if (req.path.startsWith('/api')) {
     return res.status(404).json({ error: 'not_found' });
   }
 
-  if (fs.existsSync(path.join(distPath, 'index.html'))) {
-    return res.sendFile(path.join(distPath, 'index.html'));
+  // If request is for assets or looks like a file (has extension), return 404 instead of index.html
+  if (req.path.startsWith('/assets') || req.path.includes('.')) {
+    return res.status(404).send('Not found');
+  }
+
+  const indexFile = path.join(distPath, 'index.html');
+  if (fs.existsSync(indexFile)) {
+    return res.sendFile(indexFile);
   }
 
   return res.status(404).send('Not found');
